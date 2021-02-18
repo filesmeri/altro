@@ -1,0 +1,796 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Londrina Solid', cursive;
+    background-color: #ADBAB3;    
+}
+
+*::selection {
+    background-color: hsla(4, 20%, 59%, 0.8);
+}
+
+/* Layout */
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    align-content: center;    
+    justify-content: center;   
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-margin-top: 50px;
+}
+
+.col-half {
+    width:50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    min-height: 400px;
+} 
+
+.central {
+    width:75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;    
+    position: relative;
+    min-height: 400px;
+      
+} 
+
+.central-side {
+    width:12.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;    
+    position: relative;
+    min-height: 400px;
+}
+
+@media only screen and (max-width:1024px) {
+    .central-side {
+        display: none;
+    }
+    .central{
+        width: 100%;
+    } 
+    .col-half {
+        width: 100%;
+        min-height: 170px;
+    }
+    .flex-container{
+        scroll-margin-top:0px;
+    }
+ }
+
+/* Styles */
+.mt-50 {
+    margin-top:50px;
+}
+
+.cielo {
+    background-color:  #D6E7E4;
+}
+
+/* Section */
+
+.section-title {
+    margin-top: 5%;
+    text-align: center;
+    font-size: 3.5rem; 
+    color:#3f2728; 
+    text-transform: uppercase; 
+    margin-bottom: 3%;
+    width: 90%;
+}
+
+.section-subtitle {
+    
+    text-align: center;
+    font-size: 2rem; 
+    color:#3f2728; 
+    font-weight: 100;
+    margin-bottom: 5%;
+    width: 90%;
+}
+
+.section-p {
+    text-align: center;
+    line-height: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 70%;
+    margin-bottom: 5%;
+}
+
+/* Navigation */
+
+#navbar {
+    background-color: rgba(252, 252, 252, 0);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    transition:0.6s;
+    padding-top: 30px;
+    z-index: 100;
+    justify-content: space-between;
+    
+  }
+
+.logo, .links, .hamburger {
+    margin:15px 0;
+}
+
+.links {
+    display: flex; 
+    flex-direction: row;     
+    justify-content: flex-end;
+}
+  
+.links a {   
+    display: inline;
+    color:#2f352f;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.links a:last-child {
+    margin-right:50px;
+}
+
+.logo {
+    display: inline-block;
+    padding-left: 50px;
+}
+
+.logo img{
+    width: 5rem;
+}
+
+.hamburger {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    display: flex;
+    padding-right: 50px;
+    align-content: center;
+
+}
+#hamburger-menu {
+    display: flex;
+    align-content: center;
+}
+
+.hamburger img{
+    width: 5rem;
+}
+
+#hamburger-menu {
+    display:none;
+}
+  
+#navbar a:hover {
+    color: black;
+}
+
+ /* TheMegamenu Overlay (background) */
+ .overlay {
+    /* Height & width depends on how you want to reveal the overlay */   
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: hsla(169, 26%, 87%); /* Black fallback color */
+    background-color: hsla(169, 26%, 87%, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.4s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    font-size: 36px;
+    color: #252e29;
+    text-transform: uppercase;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: goldenrod;
+    font-size: 3.1rem;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 3rem;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-width: 700px) {
+    .overlay a {
+        font-size: 2rem;
+    }
+    .overlay .closebtn {
+      font-size: 2rem;
+      top: 15px;
+      right: 10%;
+    }
+    .overlay a:hover, .overlay a:focus {
+        font-size: 2.3rem;
+      }
+  } 
+
+  @media only screen and (max-width:700px){
+      .links {
+          display:none;
+      }
+      #hamburger-menu{
+          display:inline;
+      }
+      .logo {
+          padding-left: 30px;
+      }
+      .hamburger {
+        padding-right: 30px;
+    }
+
+      .hamburger img,.logo img{
+        width: 3rem;
+    }
+  }
+
+
+
+/* Header section */
+
+#home {
+    scroll-margin-top:0px ;
+}
+
+#hero {
+    height:710px;
+}
+
+.title-wrapper {
+    z-index: 2;
+}
+
+ #hero h1 {
+    padding: 2rem;
+    text-align: center;
+    font-size: 9rem;
+    text-transform: uppercase;
+    color:#252e29;
+    text-shadow: 3px 3px 0px #5b7266;
+    /* display:table-caption; */
+}
+
+#hero h2 {
+    text-align: center;
+    font-size: 4rem; 
+    color:#3f2728;   
+
+}
+
+#hero h3 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 100;
+    padding:2.5rem;
+    color:#252e29;
+    
+}
+
+
+@media only screen and (max-width:700px) {
+    #hero h1 {
+        padding: 2rem;
+        
+        font-size:6rem;     
+        
+    }
+    
+    #hero h2 {        
+        font-size: 3rem;
+        
+    }
+    #hero h3 {        
+        font-size: 2rem;
+        
+    }
+}
+
+.video-container {
+    position:absolute;
+    display: flex;
+    top:0;
+    left:50%;
+    min-width:100%;
+    min-height:710px;
+    width:auto;
+    height:auto;
+    z-index:-100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%);
+    background-image: url(poster.jpg);
+    
+    overflow: hidden;
+}
+
+#myVideo {
+    position:absolute;
+    top:0;
+    left:50%;
+    min-width:100%;
+    min-height:100%;
+    width:auto;
+    height:100%;
+    z-index:-100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%);
+}
+
+@media only screen and (max-width:700px) {
+    .video-container {        
+        min-height:700px;        
+    }
+
+    #hero {
+        height: 700px;
+    }
+
+}
+
+/* Chi siamo */
+.about-background{
+    background-color: #D6E7E4;
+    box-shadow: 2px 2px 2px #757e79;
+}
+
+.about-background .about-photo {
+    width:70%;
+    margin-bottom: 3%;
+}
+
+.zucca {
+    position: absolute;
+    top:-15%;
+    width: 200%;
+    transform: scale(1);
+    transition: all 1s ease-out ;
+    z-index: 20;
+}
+
+.left {
+    right:-150%;
+}
+
+.right {
+    left:-100%;
+}
+
+.right img {
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+#about-photo-section {
+    overflow: hidden;
+}
+
+
+
+.about-photo img {
+    width:100%;
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width:700px) {
+   .about-background {
+       box-shadow: none;
+       margin-bottom: 0%;
+   }
+   .about-background .about-photo {
+    width: 100%;
+    margin-bottom: 0;
+    }
+    #chiSiamo {
+        margin-top: 0;
+    }
+    .about-background .section-title{
+        margin-top: 15%;
+    }
+    .about-background .section-p{
+        margin-bottom: 15%;
+        margin-top: 10%;
+        width: 90%;
+        
+    }
+
+
+}
+
+/* slider about */
+
+.slideshow-container {
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    height:500px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px #757e79;
+    
+    
+  }
+
+  .mySlides img {
+    position: absolute;
+    /* min-width:100%; 
+    min-height: auto; */
+    height: 100%;
+    width: auto;
+    left:50%;
+    top:0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%);
+    filter:grayscale(70%);
+  
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #D6E7E4;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 200;
+    transform: scale(1.5);
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    transform: scale(2);
+    /* background-color: rgba(0,0,0,0.8); */
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #774b4d; 
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #5b7265;;
+  }
+
+  @media only screen and (max-width:700px){
+      .dot{
+          display: none;
+      }
+      .slideshow-container{
+        box-shadow: none;
+      }
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+/* Coltivazione section */
+.coltivazione-background{
+    background-color: #D6E7E4;
+    box-shadow: 2px 2px 2px #757e79;
+    padding-bottom: 5%;
+    
+}
+
+.image-tab-row{
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+#inside-tab-row {
+    width:90%;
+    margin-top:7%;
+}
+
+#inside-tab-row .coltivazione-tab-title{
+    font-size: 1rem;
+}
+
+#inside-tab-row .image-tab img{
+    display: none;
+}
+
+.image-tab{
+    width: 22%;
+    display: inline-block;
+    cursor: pointer;
+}
+.image-tab img{
+    width:100%;
+    display: block;
+}
+
+.coltivazione-tab-title {
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.coltivazione-description{
+    display: none;
+}
+
+#tab-tip {
+    text-align: center;
+    width: 90%;
+    margin-top: 5%;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.expanded-image-container {
+    margin: 5% 0;
+    position: relative;
+    display: none;
+    height: 0px;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ease-in;
+    background-image: url(expandedBackground.png);
+    background-size: cover;
+    filter: drop-shadow(2px 2px 2px #b0bdba);
+    
+  }
+
+  #expanded-container{
+    scroll-margin-top:50px ;
+  }
+
+  #expandedImg {
+      width:40%;
+      transform: scale(1);
+      opacity: 0;
+      transition: all .7s ease-in;
+      margin-top: 5%;
+  }
+
+  /* #expandedImg:hover {
+    transform: scale(1.1);
+} */
+  
+  /* Expanding image text */
+  #imgtext {
+    text-align: center;
+    font-size: 3rem;
+    width: 90%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #imgdesc {
+    text-align: center;
+    width: 100%;
+    
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+  }
+  
+  /* Closable button inside the image */
+  .closebtn {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    color: #998675;
+    font-size: 2.5rem;
+    cursor: pointer;
+    font-family: 'Montserrat',sans-serif;
+  }
+
+@media only screen and (max-width:700px){
+    .image-tab{
+        width: 45%;
+        margin: 2.5%;
+    }
+    #expandedImg {
+        width:60%;
+    }
+    #imgdesc{
+        width:90%;
+    }
+}
+
+/* ___________ */
+
+.seconda-zucca {
+    position: absolute;
+    bottom:-10%;
+   right: 5%;
+    width: 40%;
+    transform: scale(1);
+    transition: all 1s ease-out ;
+}
+
+.zucca img ,.seconda-zucca img {
+    width: 100%;
+}
+
+.zucca:hover {
+    transform: scale(1.05);
+}
+
+.seconda-zucca, .zucca:hover {
+    transform: scale(1.05);
+}
+
+.frame1 {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width:90%;
+    height:90%;
+    /* background-color: grey; */
+    z-index: -10;
+    transform: scale(1);
+    transition: all 1s ease-out ;
+}
+
+#about .col-half:last-child:hover .frame1 {
+    
+    transform: scale(1.01);
+}
+
+.frame1 img {
+    width:100%;
+    height:100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: drop-shadow(4px 4px 2px #8b9690);
+}
+
+.frame-desc-right {
+    width: 70%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    padding: 30px 20%;
+}
+
+#about h3 {
+    font-size: 3.5rem; 
+    color:#3f2728; 
+    text-transform: uppercase; 
+    margin-bottom: 5%;
+}
+
+#about p {
+    line-height: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width:700px){
+    .seconda-zucca {
+        display: none;
+    }
+    #about h3 {
+        margin-top: 20%;
+        font-size: 10vw;         
+    }
+    #about p {
+        margin-bottom: 20%;
+    }
+}
+
+
+
+
+
+
