@@ -138,22 +138,22 @@
             <div id="outside-tab-row" class="image-tab-row">
                 <div class="image-tab" onclick="expandTab(this);">
                     <a href="#expanded-container"><img src="verme-01.png" alt="Hummus di lombrico"></a>
-                    <h4 class="coltivazione-tab-title">Hummus di lombrico</h4>
+                    <a href="#expanded-container"><h4 class="coltivazione-tab-title">Hummus di lombrico</h4></a>
                     <p class="coltivazione-description">Per concimare la terra usiamo il terriccio prodotto dai nosti piccoli amichetti vermi.</p>
                 </div>
                 <div class="image-tab" onclick="expandTab(this);">
                     <a href="#expanded-container"><img src="semi-02.png" alt="Varieta vecchie"></a>
-                    <h4 class="coltivazione-tab-title">Sami di varieta vecchie</h4>
+                    <a href="#expanded-container"><h4 class="coltivazione-tab-title">Sami di varieta vecchie</h4></a>
                     <p class="coltivazione-description">Cerchiamo sempre di perservare la vecchie varieta di semi della nostra terra.</p>
                 </div>
                 <div class="image-tab" onclick="expandTab(this);">
                     <a href="#expanded-container"><img src="vangatura-03.png" alt="Suolo felice" ></a>
-                    <h4 class="coltivazione-tab-title">Niente vangatura</h4>
+                    <a href="#expanded-container"><h4 class="coltivazione-tab-title">Niente vangatura</h4></a>
                     <p class="coltivazione-description">Non vanghiamo la terra ma la ariegiamo per mantenere l'equilibrio del suolo.</p>
                 </div>
                 <div class="image-tab" onclick="expandTab(this);">
                     <a href="#expanded-container"><img src="naturale-04.png" alt="Lotta naturale"></a>
-                    <h4 class="coltivazione-tab-title">Non usiamo prodotti chimici</h4>
+                    <a href="#expanded-container"><h4 class="coltivazione-tab-title">Non usiamo prodotti chimici</h4></a>
                     <p class="coltivazione-description">Non usiamo mai prodotti chimici, ma una lotta naturale contro i parasiti.</p>
                 </div>
             </div>
@@ -279,21 +279,21 @@
 
 
     // Smooth scroll
-    // const links = document.querySelectorAll("#home .links a, #home .logo a");
-    //     for (const link of links) {
-    //     link.addEventListener("click", clickHandler);
-    //     }
+    const links = document.querySelectorAll("#home .links a, #home .logo a");
+        for (const link of links) {
+        link.addEventListener("click", clickHandler);
+        }
 
-    //     function clickHandler(e) {
-    //     e.preventDefault();
-    //     const href = this.getAttribute("href");
-    //     const offsetTop = document.querySelector(href).offsetTop-50;
+        function clickHandler(e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        const offsetTop = document.querySelector(href).offsetTop-50;
 
-    //     scroll({
-    //         top: offsetTop,
-    //         behavior: "smooth"
-    //     });
-    //     }
+        scroll({
+            top: offsetTop,
+            behavior: "smooth"
+        });
+        }
 
     // Full screen menu
     /* Open */
