@@ -704,6 +704,9 @@ body {
     #imgdesc{
         width:90%;
     }
+    #imgtext {        
+        font-size: 2rem;
+      }
 }
 
 /* ___________ */
