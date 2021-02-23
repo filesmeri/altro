@@ -9,8 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="scrolljs.css"/>
-    <script src="scrolljs.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
     
@@ -47,14 +47,14 @@
 
     <header id="hero" class= flex-container>         
         <div class="video-container">
-            <video autoplay muted id="myVideo" poster="poster.jpg"  >
+            <video preload="none" autoplay muted id="myVideo" poster="poster.jpg"  >
                 <source src="rape.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
         </div>      
-        <div class="title-wrapper">
+        <div onmouseover="addAnimation(this)"  class="title-wrapper">
             <h1 onmouseover="play()">TERRA FELICE</h1>
-            <h2>Fiesso d'Artico</h2>
+            <h2  id="anim">Fiesso d'Artico</h2>
             <h3>Verdura biologica a km 0</h2>
         </div>        
     </header>
@@ -75,24 +75,24 @@
                     <!-- Full-width images with number and caption text -->
                     <div class="mySlides fade">
                       <!-- <div class="numbertext">1 / 3</div> -->
-                      <img src="https://www.crushpixel.com/big-static15/preview4/smiling-farmer-couple-watering-broccoli-1900293.jpg">
+                      <img src="slide1.jpg">
                       <!-- <div class="text">Caption Text</div> -->
                     </div>
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">1 / 3</div> -->
-                        <img style="top:auto;bottom:0;" src="https://images.squarespace-cdn.com/content/v1/524530f9e4b00a14858e49b9/1380911504922-5V5ZA26HQZEJ1Q5GN040/ke17ZwdGBToddI8pDm48kMFiMyT1nneRMhnmfuSfpxZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mlM0or4nqX7jrn5yWu0hA1QXedaIFqnAbw_tQShHbKg4-O_KAc44ak5jGzrnn7f3A/IMG_6254+copy+2.jpg">
+                        <img style="top:auto;bottom:0;" src="slide2.jpg">
                         <!-- <div class="text">Caption Text</div> -->
                     </div>
                   
                     <div class="mySlides fade">
                       <!-- <div class="numbertext">2 / 3</div> -->
-                      <img src="https://images.unsplash.com/photo-1590682680695-43b964a3ae17?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=903&q=80">
+                      <img src="slide3.jpg">
                       <!-- <div class="text">Caption Two</div> -->
                     </div>
                   
                     <div class="mySlides fade">
                       <!-- <div class="numbertext">3 / 3</div> -->
-                      <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80g">
+                      <img src="slide4.jpg">
                       <!-- <div class="text">Caption Three</div> -->
                     </div>
                   
@@ -137,23 +137,23 @@
             <h3 class="section-title">Come coltiviamo</h3>
             <div id="outside-tab-row" class="image-tab-row">
                 <div class="image-tab" onclick="expandTab(this);">
-                    <a href="#expanded-container"><img src="verme-01.png" alt="Hummus di lombrico"></a>
-                    <a href="#expanded-container"><h4 class="coltivazione-tab-title">Hummus di lombrico</h4></a>
+                    <a class="tabLink" href="#expanded-container"><img src="verme-01.png" alt="Hummus di lombrico"></a>
+                    <a class="tabLink" href="#expanded-container"><h4 class="coltivazione-tab-title">Hummus di lombrico</h4></a>
                     <p class="coltivazione-description">Per concimare la terra usiamo il terriccio prodotto dai nosti piccoli amichetti vermi.</p>
                 </div>
                 <div class="image-tab" onclick="expandTab(this);">
-                    <a href="#expanded-container"><img src="semi-02.png" alt="Varieta vecchie"></a>
-                    <a href="#expanded-container"><h4 class="coltivazione-tab-title">Sami di varieta vecchie</h4></a>
+                    <a class="tabLink" href="#expanded-container"><img src="semi-02.png" alt="Varieta vecchie"></a>
+                    <a class="tabLink" href="#expanded-container"><h4 class="coltivazione-tab-title">Sami di varieta vecchie</h4></a>
                     <p class="coltivazione-description">Cerchiamo sempre di perservare la vecchie varieta di semi della nostra terra.</p>
                 </div>
                 <div class="image-tab" onclick="expandTab(this);">
-                    <a href="#expanded-container"><img src="vangatura-03.png" alt="Suolo felice" ></a>
-                    <a href="#expanded-container"><h4 class="coltivazione-tab-title">Niente vangatura</h4></a>
+                    <a class="tabLink" href="#expanded-container"><img src="vangatura-03.png" alt="Suolo felice" ></a>
+                    <a class="tabLink" href="#expanded-container"><h4 class="coltivazione-tab-title">Niente vangatura</h4></a>
                     <p class="coltivazione-description">Non vanghiamo la terra ma la ariegiamo per mantenere l'equilibrio del suolo.</p>
                 </div>
                 <div class="image-tab" onclick="expandTab(this);">
-                    <a href="#expanded-container"><img src="naturale-04.png" alt="Lotta naturale"></a>
-                    <a href="#expanded-container"><h4 class="coltivazione-tab-title">Non usiamo prodotti chimici</h4></a>
+                    <a class="tabLink" href="#expanded-container"><img src="naturale-04.png" alt="Lotta naturale"></a>
+                    <a class="tabLink" href="#expanded-container"><h4 class="coltivazione-tab-title">Non usiamo prodotti chimici</h4></a>
                     <p class="coltivazione-description">Non usiamo mai prodotti chimici, ma una lotta naturale contro i parasiti.</p>
                 </div>
             </div>
@@ -197,30 +197,92 @@
         </aside>
     </section>
 
-<!--About section-->
-    <section  id="about" class="flex-container mt-50" >
-        <div class="col-half">
-            <!-- <div scrolljs="fade-left|1000|ease-in" class="zucca">
-            <img src="zucca-rape.png" alt="">
+    <!--Prodotti-->
+    <section id="prodotti" class="flex-container mt-50">
+        <aside class="central-side">
+            <div class="zucca left">
+                <img src="zucca-rape.png" alt="pumpkin illustration">
             </div>
-            <div class="seconda-zucca" >
-                <img src="zucca-rape.png" alt="">
+        </aside>
+        <article class="central product-background">            
+            <h3 class="section-title">I nostri prodotti</h3>
+            <h4 class="section-subtitle">Prodotti di stagione, 100% naturali.</h4>
+            
+            <figure class="about-photo">
+                <div class="product-slideshow-container">
+                    <div class="myProducts fade">                      
+                      <div class="product-image-wrapper">
+                        <img src="verdura-02.png">
+                      </div>
+                      <div class="product-desc-wrapper">
+                        <h4 class="product-title">Verdura di stagione</h4>
+                        <p class="product-desc-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Recusandae nostrum laborum, quod, incidunt, labore dicta non cupiditate corrupti 
+                            nemo placeat commodi in vel consequatur. Repellat cumque libero inventore deleniti 
+                            nemo.</p>
+                      </div>                      
+                    </div>
+                    <div class="myProducts fade">                        
+                        <div class="product-image-wrapper">
+                          <img src="uova.png">
+                        </div>
+                        <div class="product-desc-wrapper">
+                          <h4 class="product-title">Uova di stagione</h4>
+                          <p class="product-desc-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Recusandae nostrum laborum, quod, incidunt, labore dicta non cupiditate corrupti 
+                            nemo placeat commodi in vel consequatur. Repellat cumque libero inventore deleniti 
+                            nemo.</p>
+                        </div>                        
+                    </div>
+                  
+                    <div class="myProducts fade">                        
+                        <div class="product-image-wrapper">
+                          <img src="slide3.jpg">
+                        </div>
+                        <div class="product-desc-wrapper">
+                          <h4 class="product-title">Frutta di stagione</h4>
+                          <p class="product-desc-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Recusandae nostrum laborum, quod, incidunt, labore dicta non cupiditate corrupti 
+                            nemo placeat commodi in vel consequatur. Repellat cumque libero inventore deleniti 
+                            nemo.</p>
+                        </div>                        
+                    </div>
+                  
+                    <div class="myProducts fade">                        
+                        <div class="product-image-wrapper">
+                          <img src="slide4.jpg">
+                        </div>
+                        <div class="product-desc-wrapper">
+                          <h4 class="product-title">Confetture di stagione</h4>
+                          <p class="product-desc-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Recusandae nostrum laborum, quod, incidunt, labore dicta non cupiditate corrupti 
+                            nemo placeat commodi in vel consequatur. Repellat cumque libero inventore deleniti 
+                            nemo.</p>
+                        </div>                        
+                    </div>
+                  </div>
+                  <br>
+                  
+                  <!-- The dots/circles -->
+                </div>
+                  <!-- _______ -->
+
+                <!-- <img src="foto.jpg" alt=""> -->
+            </figure>  
+            <div class="product-dots-wrapper">
+                <span class="productDot" onclick="currentProduct(0)"><img src="zucca-rape.png" alt=""></span>
+                <span class="productDot" onclick="currentProduct(1)"></span>
+                <span class="productDot" onclick="currentProduct(2)"></span>
+                <span class="productDot" onclick="currentProduct(3)"></span>
+              </div>         
+        </article>
+        <aside class="central-side">
+            <!-- <div class="zucca right">
+                <img src="zucca-rape.png" alt="pumpkin illustration">
             </div> -->
-        </div>
-        <div class="col-half">
-            <div class="frame1">
-                <img src="okvir.png" alt="">
-            </div>
-            <div class="frame-desc-right">
-                <h3>Verdura felice</h3>
-                <p>Lorem ipsum dolor sit, 
-                    amet consectetur adipisicing elit. 
-                    Velit fugit qui dolorem quo ipsa, 
-                    necessitatibus magni error sequi ratione natus nam 
-                    facere ex eos quas at odio, enim unde iure.</p>
-            </div>
-        </div>        
+        </aside>
     </section>
+
 
     <div style="margin-top: 500px;">
         <h3>lalala</h3>
@@ -287,7 +349,7 @@
         function clickHandler(e) {
         e.preventDefault();
         const href = this.getAttribute("href");
-        const offsetTop = document.querySelector(href).offsetTop-50;
+        const offsetTop = document.querySelector(href).offsetTop-10;
 
         scroll({
             top: offsetTop,
@@ -362,10 +424,9 @@
         // Use the value of the alt attribute of the clickable image as text inside the expanded image
         imgText.innerHTML = imgElement.alt;
         // Use the value of the clicked tab p element for expanded image description
-        imgDesc.innerHTML = descElement;
+        imgDesc.innerHTML = descElement;        
         // Show the container element (hidden with CSS)
         expandImg.parentElement.style.display = "flex";
-        expandImg.parentElement.style.height = "100%";
         setTimeout(function(){ 
             expandImg.style.transform="scale(1.1)";
             expandImg.style.opacity="1";
@@ -385,19 +446,64 @@
             tabTip.style.display='block';
         }
 
+    // Product slider
+
+        var productIndex = 0;
+        var productDots = document.getElementsByClassName("productDot");
+        showProducts();
+        var dotisClicked = false;
+        var interval;
+
+        // Thumbnail image controls
+        function currentProduct(n) {
+            clearInterval(interval);
+            var productDots = document.getElementsByClassName("productDot");
+            showProducts(productIndex = n);
+            productDots[n].className += " active";
+            dotisClicked = true;
+            setTimeout(function(){
+                dotisClicked=false;
+                interval = setInterval(showProducts,5000);
+            }, 10000);
+        }
+
+        if(!dotisClicked){
+        interval = setInterval(showProducts, 5000); // Change image every 2 seconds
+        productDots[productIndex-1].className += " active";
+        }
+        else {
+                        
+        }
+
+        function showProducts() {
+        var i;
+        var j;
+        var slides = document.getElementsByClassName("myProducts");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        productIndex++;
+        if (productIndex > slides.length) {productIndex = 1}
+        for (j = 0; j < productDots.length; j++) {
+            productDots[j].className = productDots[j].className.replace(" active", "");
+        }
+        productDots[productIndex-1].className += " active";
+        slides[productIndex-1].style.display = "flex";
+        
+        }
     
 
     // Onload scroll position___________
     // to use recorded scroll position
-    document.addEventListener("DOMContentLoaded", function(event) { 
-        var scrollpos = localStorage.getItem('scrollpos');
-        if (scrollpos) window.scrollTo(0, 'scrollpos');
-    });
-
-    // to use recorded scroll position
     // document.addEventListener("DOMContentLoaded", function(event) { 
-    //     window.scrollTo(0, 0);
+    //     var scrollpos = localStorage.getItem('scrollpos');
+    //     if (scrollpos) {window.scrollTo(0, scrollpos)};
     // });
+
+    // to go to top
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        window.scrollTo(0, 0);
+    });
 
     // set scroll position before exiting the page
     window.onbeforeunload = function(e) {
@@ -407,8 +513,11 @@
         }
     };
 
+    function addAnimation(element){
+        element.classList.add('animate__animated', 'animate__zoomIn');        
+    };
+
 </script>
-<!-- <script src="scrolljs.js"></script> -->
     
 </body>
 </html>
